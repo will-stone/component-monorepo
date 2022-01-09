@@ -4,15 +4,22 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var _asyncToGenerator = require('@babel/runtime/helpers/asyncToGenerator');
 var _slicedToArray = require('@babel/runtime/helpers/slicedToArray');
+var _taggedTemplateLiteral = require('@babel/runtime/helpers/taggedTemplateLiteral');
 var _regeneratorRuntime = require('@babel/runtime/regenerator');
 var react = require('react');
+var styled = require('styled-components');
 var jsxRuntime = require('react/jsx-runtime');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var _asyncToGenerator__default = /*#__PURE__*/_interopDefaultLegacy(_asyncToGenerator);
 var _slicedToArray__default = /*#__PURE__*/_interopDefaultLegacy(_slicedToArray);
+var _taggedTemplateLiteral__default = /*#__PURE__*/_interopDefaultLegacy(_taggedTemplateLiteral);
 var _regeneratorRuntime__default = /*#__PURE__*/_interopDefaultLegacy(_regeneratorRuntime);
+var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
+
+var _templateObject;
+var StyledButton = styled__default["default"].button(_templateObject || (_templateObject = _taggedTemplateLiteral__default["default"](["\n  color: blue;\n"])));
 
 var doProm = function doProm() {
   return new Promise(function (resolve) {
@@ -56,7 +63,7 @@ var Button = function Button() {
     };
   }();
 
-  return /*#__PURE__*/jsxRuntime.jsx("button", {
+  return /*#__PURE__*/jsxRuntime.jsx(StyledButton, {
     onClick: handleClick,
     children: data
   });

@@ -1,4 +1,9 @@
 import { useState } from "react";
+import styled from 'styled-components'
+
+const StyledButton = styled.button`
+  color: blue;
+`
 
 const doProm = () =>
   new Promise((resolve) => {
@@ -14,5 +19,5 @@ export const Button = () => {
     setData(result);
   };
 
-  return <button onClick={handleClick}>{data}</button>;
+  return <StyledButton onClick={handleClick}>{data}</StyledButton>;
 };

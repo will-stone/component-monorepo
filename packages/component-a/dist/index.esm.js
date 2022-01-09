@@ -1,8 +1,13 @@
 import _asyncToGenerator from '@babel/runtime/helpers/asyncToGenerator';
 import _slicedToArray from '@babel/runtime/helpers/slicedToArray';
+import _taggedTemplateLiteral from '@babel/runtime/helpers/taggedTemplateLiteral';
 import _regeneratorRuntime from '@babel/runtime/regenerator';
 import { useState } from 'react';
+import styled from 'styled-components';
 import { jsx, jsxs } from 'react/jsx-runtime';
+
+var _templateObject;
+var StyledButton = styled.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: blue;\n"])));
 
 var doProm = function doProm() {
   return new Promise(function (resolve) {
@@ -46,7 +51,7 @@ var Button = function Button() {
     };
   }();
 
-  return /*#__PURE__*/jsx("button", {
+  return /*#__PURE__*/jsx(StyledButton, {
     onClick: handleClick,
     children: data
   });
