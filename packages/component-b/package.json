@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.16.7",
     "component-a": "1.0.0"
   },
   "peerDependencies": {
