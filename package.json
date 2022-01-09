@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf demos/next/.next && npx lerna clean --yes && rimraf node_modules",
     "dev": "npx lerna run --scope demo-next --stream dev",
-    "build": "lerna --ignore demo-* exec -- npm run build",
+    "build": "lerna exec --ignore demo-* -- rollup --config \\$LERNA_ROOT_PATH/rollup.config.js",
     "postinstall": "lerna bootstrap"
   },
   "keywords": [],
