@@ -1,5 +1,5 @@
 import Head from "next/head";
-import ComponentA from 'component-a'
+import ComponentB from 'component-b'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
 
       <main>
         <p>Hello</p>
-        <ComponentA />
+        <ComponentB />
       </main>
     </div>
   );

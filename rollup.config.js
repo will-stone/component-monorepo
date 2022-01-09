@@ -22,5 +22,8 @@ export default {
       ],
     }),
   ],
-  external: Object.keys(pkg.peerDependencies || {}),
+  external: Object.keys({
+    ...(pkg.peerDependencies || {}),
+    ...(pkg.dependencies || {}),
+  }),
 };
