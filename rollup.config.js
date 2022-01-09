@@ -14,16 +14,18 @@ export default {
     del({ targets: ["dist/*"] }),
     external(),
     babel({
-      babelHelpers: "bundled",
+      babelHelpers: "runtime",
       exclude: "node_modules/**",
       presets: [
         ["@babel/preset-env", {}],
         ["@babel/preset-react", { runtime: "automatic" }],
       ],
+      plugins: ["@babel/plugin-transform-runtime"],
     }),
   ],
-  external: Object.keys({
-    ...(pkg.peerDependencies || {}),
-    ...(pkg.dependencies || {}),
-  }),
+  external: [
+    /@babel\/runtime/,
+    ...Object.keys(pkg.peerDependencies || {}),
+    ...Object.keys(pkg.dependencies || {}),
+  ],
 };

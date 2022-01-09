@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const doProm = () =>
   new Promise((resolve) => {
-    setTimeout(() => resolve("updated"), 1000);
+    setTimeout(() => resolve("done"), 1000);
   });
 
 export const Button = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState('click to run promise');
 
-  useEffect(() => {
-    const fetcher = async () => {
-      const result = await doProm()
-      setData(result);
-    };
-    fetcher();
-  }, [setData]);
+  const handleClick = async () => {
+    setData("waiting");
+    const result = await doProm();
+    setData(result);
+  };
 
-  return <button>I am a button {data}</button>;
+  return <button onClick={handleClick}>{data}</button>;
 };
