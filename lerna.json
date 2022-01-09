@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/*"],
+  "packages": ["packages/*", "demos/*"],
   "hoist": true,
   "version": "independent",
   "command": {
