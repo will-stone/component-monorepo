@@ -17,7 +17,14 @@ export default {
       babelHelpers: "runtime",
       exclude: "node_modules/**",
       presets: [
-        ["@babel/preset-env", {}],
+        [
+          "@babel/preset-env",
+          {
+            // targets: {
+            //   browsers: ["ie >= 11"],
+            // },
+          },
+        ],
         ["@babel/preset-react", { runtime: "automatic" }],
       ],
       plugins: ["@babel/plugin-transform-runtime"],
