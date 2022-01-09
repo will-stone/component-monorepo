@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "clean": "rimraf demos/next/.next && npx lerna clean --yes && rimraf node_modules",
+    "dev": "npx lerna run --scope demo-next --stream dev",
     "build": "lerna --ignore demo-* exec -- npm run build",
     "postinstall": "lerna bootstrap"
   },
