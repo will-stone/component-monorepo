@@ -18,14 +18,18 @@ export default {
       exclude: "node_modules/**",
       presets: [
         [
+          // Defaults to transform all code to ES5
+          // https://babeljs.io/docs/en/babel-preset-env
           "@babel/preset-env",
+        ],
+        [
+          "@babel/preset-react",
           {
-            // targets: {
-            //   browsers: ["ie >= 11"],
-            // },
+            // Use latest React JSX transform
+            // https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
+            runtime: "automatic",
           },
         ],
-        ["@babel/preset-react", { runtime: "automatic" }],
       ],
       plugins: ["@babel/plugin-transform-runtime"],
     }),
