@@ -2,7 +2,7 @@ import babel from "@rollup/plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
 import del from "rollup-plugin-delete";
 
-const pkg = require(process.cwd() + "/package.json");
+const pkg = require(process.env.INIT_CWD + "/package.json");
 
 export default {
   input: pkg.source,
