@@ -1,7 +1,6 @@
 import babel from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import del from 'rollup-plugin-delete'
-import external from 'rollup-plugin-peer-deps-external'
 
 const babelConfig = require('./babel.config.json')
 
@@ -16,7 +15,6 @@ export default {
   plugins: [
     nodeResolve(),
     del({ targets: ['dist/*'] }),
-    external(),
     babel({
       extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx'],
       babelHelpers: 'runtime',
@@ -24,9 +22,12 @@ export default {
       ...babelConfig,
     }),
   ],
-  external: [
-    /@babel\/runtime/u,
-    ...Object.keys(package_.peerDependencies || {}),
-    ...Object.keys(package_.dependencies || {}),
-  ],
+  external: (id) => {
+    const peerDependencies = Object.keys(package_.peerDependencies || {})
+    const dependencies = Object.keys(package_.dependencies || {})
+    return (
+      peerDependencies.some((depName) => id.startsWith(depName)) ||
+      dependencies.some((depName) => id.startsWith(depName))
+    )
+  },
 }
