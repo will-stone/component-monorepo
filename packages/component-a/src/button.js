@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
@@ -7,17 +7,17 @@ const StyledButton = styled.button`
 
 const doProm = () =>
   new Promise((resolve) => {
-    setTimeout(() => resolve("done"), 1000);
-  });
+    setTimeout(() => resolve('done'), 1000)
+  })
 
 export const Button = () => {
-  const [data, setData] = useState('click to run promise');
+  const [data, setData] = useState('click to run promise')
 
   const handleClick = async () => {
-    setData("waiting");
-    const result = await doProm();
-    setData(result);
-  };
+    setData('waiting')
+    const result = await doProm()
+    setData(result)
+  }
 
-  return <StyledButton onClick={handleClick}>{data}</StyledButton>;
-};
+  return <StyledButton onClick={handleClick}>{data}</StyledButton>
+}

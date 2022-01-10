@@ -2,17 +2,37 @@
   "name": "component-monorepo",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "scripts": {
+    "build": "lerna exec --ignore demo-* -- rollup --config \\$LERNA_ROOT_PATH/rollup.config.js",
+    "build-storybook": "build-storybook",
     "clean": "rimraf demos/next/.next && npx lerna clean --yes && rimraf node_modules",
     "dev": "npx lerna run --scope demo-next --stream dev",
-    "build": "lerna exec --ignore demo-* -- rollup --config \\$LERNA_ROOT_PATH/rollup.config.js",
     "postinstall": "lerna bootstrap",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@will-stone/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@will-stone/eslint-config/typescript",
+      "@will-stone/eslint-config/react",
+      "@will-stone/eslint-config/node",
+      "@will-stone/eslint-config/prettier"
+    ]
+  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.7",
@@ -26,9 +46,26 @@
     "@storybook/addon-links": "^6.4.10",
     "@storybook/react": "^6.4.10",
     "@types/react": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "@will-stone/eslint-config": "^6.6.0",
+    "@will-stone/prettier-config": "^6.0.0",
     "babel-loader": "^8.2.3",
     "core-js": "^3.20.2",
+    "eslint": "^8.6.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-switch-case": "^1.1.2",
+    "eslint-plugin-unicorn": "^40.0.0",
+    "husky": "^7.0.4",
     "lerna": "^4.0.0",
+    "lint-staged": "^12.1.7",
+    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
@@ -36,6 +73,5 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "^4.5.4"
-  },
-  "dependencies": {}
+  }
 }
