@@ -6,6 +6,9 @@ const babelConfig = require('./babel.config.json')
 
 const package_ = require(`${process.env.PWD}/package.json`)
 
+// Extensions to resolve for
+const extensions = ['.js', '.jsx', '.ts', '.tsx']
+
 export default {
   input: package_.source,
   output: [
@@ -13,16 +16,18 @@ export default {
     { file: package_.module, format: 'esm', exports: 'named' },
   ],
   plugins: [
-    nodeResolve(),
+    nodeResolve({ extensions }),
     del({ targets: ['dist/*'] }),
     babel({
-      extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx'],
+      extensions,
       babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       ...babelConfig,
     }),
   ],
   external: (id) => {
+    if (id.startsWith('@babel/runtime')) return true
+
     const peerDependencies = Object.keys(package_.peerDependencies || {})
     const dependencies = Object.keys(package_.dependencies || {})
     return (
