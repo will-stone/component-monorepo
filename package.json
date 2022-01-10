@@ -6,7 +6,7 @@
   "license": "ISC",
   "author": "",
   "scripts": {
-    "build": "lerna exec --ignore demo-* -- rollup --config \\$LERNA_ROOT_PATH/rollup.config.js",
+    "build": "lerna exec --parallel --ignore demo-* -- rollup --config \\$LERNA_ROOT_PATH/rollup.config.js",
     "build-storybook": "build-storybook",
     "clean": "rimraf demos/next/.next && npx lerna clean --yes && rimraf node_modules",
     "dev": "npx lerna run --scope demo-next --stream dev",
