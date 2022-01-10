@@ -1,4 +1,5 @@
 import babel from '@rollup/plugin-babel'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import del from 'rollup-plugin-delete'
 import external from 'rollup-plugin-peer-deps-external'
 
@@ -13,6 +14,7 @@ export default {
     { file: package_.module, format: 'esm', exports: 'named' },
   ],
   plugins: [
+    nodeResolve(),
     del({ targets: ['dist/*'] }),
     external(),
     babel({

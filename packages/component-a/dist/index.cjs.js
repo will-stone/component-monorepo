@@ -69,10 +69,18 @@ var Button = function Button() {
   });
 };
 
+var Nested = function Nested() {
+  return jsxRuntime.jsx("div", {
+    children: "I am nested"
+  });
+};
+
+var Nested$1 = Nested;
+
 var ComponentA = function ComponentA(_ref) {
   var children = _ref.children;
   return jsxRuntime.jsxs("div", {
-    children: [jsxRuntime.jsx(Button, {}), children]
+    children: [jsxRuntime.jsx(Button, {}), children, jsxRuntime.jsx(Nested$1, {})]
   });
 };
 
