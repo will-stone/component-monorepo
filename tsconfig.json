@@ -2,10 +2,10 @@
   "compilerOptions": {
     "declaration": true,
     "module": "esnext",
-    "target": "es5",
+    "target": "esnext",
+    "strict": true,
     "lib": ["ESNext"],
     "jsx": "react-jsx",
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
