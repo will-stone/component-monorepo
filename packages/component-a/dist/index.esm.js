@@ -12,7 +12,7 @@ var StyledButton = styled.button(_templateObject || (_templateObject = _taggedTe
 var doProm = function doProm() {
   return new Promise(function (resolve) {
     setTimeout(function () {
-      return resolve("done");
+      return resolve('done');
     }, 1000);
   });
 };
@@ -30,7 +30,7 @@ var Button = function Button() {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              setData("waiting");
+              setData('waiting');
               _context.next = 3;
               return doProm();
 
