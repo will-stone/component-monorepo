@@ -14,9 +14,11 @@ export default {
     del({ targets: ["dist/*"] }),
     external(),
     babel({
+      extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", ".tsx"],
       babelHelpers: "runtime",
       exclude: "node_modules/**",
       presets: [
+        "@babel/preset-typescript",
         [
           // Defaults to transform all code to ES5
           // https://babeljs.io/docs/en/babel-preset-env
