@@ -17,8 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.16.7",
-    "component-a": "1.0.0",
-    "styled-components": "4.4.1"
+    "component-a": "1.0.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
