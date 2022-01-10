@@ -10,8 +10,8 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var ComponentA__default = /*#__PURE__*/_interopDefaultLegacy(ComponentA);
 
 var ComponentB = function ComponentB() {
-  return /*#__PURE__*/jsxRuntime.jsx("div", {
-    children: /*#__PURE__*/jsxRuntime.jsx(ComponentA__default["default"], {})
+  return jsxRuntime.jsx("div", {
+    children: jsxRuntime.jsx(ComponentA__default["default"], {})
   });
 };
 

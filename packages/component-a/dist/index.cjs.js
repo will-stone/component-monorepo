@@ -35,8 +35,8 @@ var Button = function Button() {
       data = _useState2[0],
       setData = _useState2[1];
 
-  var handleClick = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator__default["default"]( /*#__PURE__*/_regeneratorRuntime__default["default"].mark(function _callee() {
+  var handleClick = function () {
+    var _ref = _asyncToGenerator__default["default"](_regeneratorRuntime__default["default"].mark(function _callee() {
       var result;
       return _regeneratorRuntime__default["default"].wrap(function _callee$(_context) {
         while (1) {
@@ -63,7 +63,7 @@ var Button = function Button() {
     };
   }();
 
-  return /*#__PURE__*/jsxRuntime.jsx(StyledButton, {
+  return jsxRuntime.jsx(StyledButton, {
     onClick: handleClick,
     children: data
   });
@@ -71,8 +71,8 @@ var Button = function Button() {
 
 var ComponentA = function ComponentA(_ref) {
   var children = _ref.children;
-  return /*#__PURE__*/jsxRuntime.jsxs("div", {
-    children: [/*#__PURE__*/jsxRuntime.jsx(Button, {}), children]
+  return jsxRuntime.jsxs("div", {
+    children: [jsxRuntime.jsx(Button, {}), children]
   });
 };
 
